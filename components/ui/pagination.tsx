@@ -8,7 +8,13 @@ import {
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 
-function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
+type PaginationProps = {
+  className?: string;
+  page: number;
+  setPage: (page: number) => void;
+} & React.ComponentProps<"nav">;
+
+function Pagination({ className, page, setPage, ...props }: PaginationProps) {
   return (
     <nav
       role="navigation"
@@ -16,8 +22,10 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       data-slot="pagination"
       className={cn("mx-auto flex w-full justify-center", className)}
       {...props}
-    />
-  )
+    >
+      {/* Pagination content goes here */}
+    </nav>
+  );
 }
 
 function PaginationContent({
