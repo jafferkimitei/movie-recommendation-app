@@ -18,7 +18,7 @@ import axios from 'axios';
 // Mock dependencies
 jest.mock('next-auth/next');
 jest.mock('axios');
-jest.mock('@/app/api/auth/[...nextauth]/route', () => ({
+jest.mock('@/app/auth/options', () => ({
   authOptions: { providers: [] },
 }));
 
