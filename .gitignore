@@ -17,6 +17,12 @@
 /.next/
 /out/
 
+# Testing
+/coverage
+*.lcov
+
+# Jest
+jest.config.js.bak
 # production
 /build
 

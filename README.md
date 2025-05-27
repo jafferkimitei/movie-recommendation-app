@@ -1,1 +1,65 @@
-## MOVIE RECOMMENDATION APP
+# Movie Recommendation App 🎬
+
+A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **Tailwind CSS**, **Shadcn/UI**, **TMDB API**  and **Google Auth**.  
+
+✅ Browse popular movies  
+✅ Search for your favorites  
+✅ View detailed movie information  
+✅ Authentication with Google  
+✅ Fully responsive design  
+✅ Optimized CI/CD pipeline with GitHub Actions and Vercel  
+
+---
+
+## 🚀 Screenshots
+
+### Home Page
+![Home Page Screenshot](./screenshots/homepage.png)
+
+### Movie Details
+![Movie Details Screenshot](./screenshots/movie-details.png)
+
+### Authentication (Login/Sign Up)
+![Login Screenshot](./screenshots/login.png)
+
+---
+
+## 🧑‍🎨 Advanced Design
+
+Our application is crafted with modern design principles:
+- **Tailwind CSS** for atomic CSS styling.
+- **Shadcn/UI** for consistent UI components.
+- **Responsive layouts** ensuring a seamless experience across devices.
+- **Accessibility-first** approach for inclusivity.
+- **Skeleton loading states** for smooth transitions.
+
+---
+
+## 🌐 Tech Stack
+
+- **Frontend**: Next.js 15, TypeScript, Tailwind CSS, Shadcn/UI
+- **Backend**: TMDB API, NextAuth.js
+- **Auth**: Google Sign-In, JWT
+- **Testing**: Jest , Mock Service Worker (MSW)
+- **CI/CD**: GitHub Actions, Vercel
+
+---
+
+## 🛠️ Setup
+
+1. Clone the repo
+2. Install dependencies
+3. Configure environment variables (`.env`)
+4. Run the app: `npm run dev`
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+MIT License
