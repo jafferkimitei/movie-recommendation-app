@@ -1,5 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getAuthSession } from '@/services/auth';
+
+// Extend the user type to include 'id'
+declare module 'next-auth' {
+  interface User {
+    id?: string;
+  }
+
+  interface Session {
+    user?: User;
+  }
+}
 import { getPopularMovies, searchMovies, getMovieDetails } from '@/services/tmdb';
 import { getServerSession } from 'next-auth/next';
 import axios from 'axios';
