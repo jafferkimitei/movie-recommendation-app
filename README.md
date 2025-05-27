@@ -11,6 +11,13 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 
 ---
 
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/jafferkimitei/movie-recommendation?color=blue&style=for-the-badge" alt="Top Language" />
+  <img src="https://img.shields.io/github/last-commit/jafferkimitei/movie-recommendation?color=green&style=for-the-badge" alt="Last Commit" />
+  <img src="https://img.shields.io/github/license/jafferkimitei/movie-recommendation?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4%20by%20Jaffer-blueviolet?style=for-the-badge" alt="Made by Jaffer" />
+</p>
+
 ## 🚀 Screenshots
 
 ### Home Page
@@ -63,3 +70,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 ## 📄 License
 
 MIT License
+
