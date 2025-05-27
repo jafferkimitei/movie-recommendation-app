@@ -15,6 +15,16 @@ type PaginationProps = {
 } & React.ComponentProps<"nav">;
 
 function Pagination({ className, page, setPage, ...props }: PaginationProps) {
+  const goToPrevious = () => {
+    if (page > 1) setPage(page - 1);
+  };
+
+  const goToNext = () => {
+    setPage(page + 1);
+  };
+
+  const pageNumbers = Array.from({ length: 5 }, (_, i) => i + 1);
+
   return (
     <nav
       role="navigation"
@@ -23,10 +33,34 @@ function Pagination({ className, page, setPage, ...props }: PaginationProps) {
       className={cn("mx-auto flex w-full justify-center", className)}
       {...props}
     >
-      {/* Pagination content goes here */}
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious onClick={goToPrevious} />
+        </PaginationItem>
+
+        {pageNumbers.map((num) => (
+          <PaginationItem key={num}>
+            <PaginationLink
+              href="#"
+              isActive={page === num}
+              onClick={(e) => {
+                e.preventDefault();
+                setPage(num);
+              }}
+            >
+              {num}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+
+        <PaginationItem>
+          <PaginationNext onClick={goToNext} />
+        </PaginationItem>
+      </PaginationContent>
     </nav>
   );
 }
+
 
 function PaginationContent({
   className,
