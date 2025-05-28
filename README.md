@@ -28,7 +28,7 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 ![Movie Details Screenshot](/screenshots/screenshot4.png)
 
 ### Authentication (Login/Sign Up)
-![Login Screenshot](./screenshots/screenshot1.png)
+![Login Screenshot](/screenshots/screenshot1.png)
 
 ---
 
