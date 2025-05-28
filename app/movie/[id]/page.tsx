@@ -136,7 +136,7 @@ const shareButtonRef = useRef<HTMLButtonElement>(null);
   onClick={() => setIsShareOpen(!isShareOpen)}
   variant="ghost"
   size="sm"
-  className="relative text-slate-400 hover:text-purple-300 hover:bg-slate-800/50 rounded-xl"
+  className="cursor-pointer relative text-slate-400 hover:text-purple-300 hover:bg-slate-800/50 rounded-xl"
 >
   <Share2 className="w-5 h-5" />
 </Button>

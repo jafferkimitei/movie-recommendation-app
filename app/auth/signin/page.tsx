@@ -168,7 +168,7 @@ export default function SignInPage() {
             >
               <Button
                 onClick={() => signIn("google", { callbackUrl: "/" })}
-                className="w-full py-6 bg-gradient-to-r from-white to-gray-100 text-black hover:from-gray-100 hover:to-white transition-all duration-300 flex items-center justify-center gap-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl border-2 border-transparent hover:border-gray-300"
+                className="cursor-pointer w-full py-6 bg-gradient-to-r from-white to-gray-100 text-black hover:from-gray-100 hover:to-white transition-all duration-300 flex items-center justify-center gap-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl border-2 border-transparent hover:border-gray-300"
               >
                 <GoogleIcon isHovered={isHovered} />
                 Sign in with Google

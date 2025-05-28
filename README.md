@@ -1,4 +1,4 @@
-# Movie Recommendation App 🎬
+# JAFFLIX - Movie Recommendation App 🎬
 
 A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **Tailwind CSS**, **Shadcn/UI**, **TMDB API**  and **Google Auth**.  
 
@@ -21,13 +21,14 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 ## 🚀 Screenshots
 
 ### Home Page
-![Home Page Screenshot](./screenshots/homepage.png)
+![Home Page Screenshot](./screenshots/screenshot2.png)
 
 ### Movie Details
-![Movie Details Screenshot](./screenshots/movie-details.png)
+![Movie Details Screenshot](./screenshots/screenshot3.png)
+![Movie Details Screenshot](./screenshots/screenshot4.png)
 
 ### Authentication (Login/Sign Up)
-![Login Screenshot](./screenshots/login.png)
+![Login Screenshot](./screenshots/screenshot1.png)
 
 ---
 
