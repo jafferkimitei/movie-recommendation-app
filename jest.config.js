@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import path from 'path';
 
 export const testEnvironment = 'jsdom';
 export const setupFilesAfterEnv = ['<rootDir>/jest.setup.js'];
