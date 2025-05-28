@@ -20,7 +20,6 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 
 ## 🚀 Screenshots
 
-## 🚀 Screenshots
 
 ### Home Page
 ![Home Page Screenshot](https://raw.githubusercontent.com/jafferkimitei/movie-recommendation-app/main/public/screenshots/screenshot2.png)
