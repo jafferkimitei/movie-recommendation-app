@@ -9,8 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const backgrounds = [
   "/login1.jpg",
   "/login2.jpg",
-  "/login3.webp",
-  "/login4.webp",
+  "/login3.webp"
 ];
 
 export default function SignInPage() {
