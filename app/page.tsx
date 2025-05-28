@@ -66,7 +66,7 @@ export default function HomePage() {
               <Button
                 onClick={() => signOut({ callbackUrl: "/auth/signin" })}
                 variant="outline"
-                className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm"
+                className="cursor-pointer border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm"
               >
                 Sign Out
               </Button>
@@ -79,7 +79,7 @@ export default function HomePage() {
       <main className="container mx-auto px-6 pb-12 space-y-8">
         {/* Search Section */}
         <div className="flex justify-center">
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-2xl mt-5">
             <SearchBar onSearch={setQuery} />
           </div>
         </div>

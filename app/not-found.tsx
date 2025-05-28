@@ -107,18 +107,6 @@ export default function NotFound() {
                 Back to Home
               </Link>
             </Button>
-            
-            <Button 
-              asChild 
-              variant="outline"
-              size="lg"
-              className="border-slate-600 text-slate-300 hover:bg-slate-800/50 hover:border-purple-500/50 px-8 py-3 rounded-2xl backdrop-blur-sm transition-all duration-300"
-            >
-              <Link href="/search" className="flex items-center gap-2">
-                <span>🔍</span>
-                Search Movies
-              </Link>
-            </Button>
           </div>
 
           {/* Fun movie quotes */}
@@ -129,22 +117,6 @@ export default function NotFound() {
             <p className="text-slate-500 text-sm mt-2">
               - Dorothy, The Wizard of Oz
             </p>
-          </div>
-        </div>
-
-        {/* Popular movies suggestion */}
-        <div className="pt-8 border-t border-slate-700/50">
-          <p className="text-slate-400 mb-4">While you&apos;re here, check out these popular sections:</p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {['Action', 'Comedy', 'Horror', 'Sci-Fi', 'Drama'].map((genre) => (
-              <Link 
-                key={genre}
-                href={`/?genre=${genre.toLowerCase()}`}
-                className="px-4 py-2 bg-slate-800/50 hover:bg-purple-600/20 border border-slate-700/50 hover:border-purple-500/50 rounded-full text-sm text-slate-300 hover:text-purple-300 transition-all duration-300 transform hover:-translate-y-0.5"
-              >
-                {genre}
-              </Link>
-            ))}
           </div>
         </div>
       </div>

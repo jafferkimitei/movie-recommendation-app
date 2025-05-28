@@ -33,7 +33,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
       {/* Main search container */}
       <div className="relative">
         {/* Search icon */}
-        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+        <div className="cursor-pointer absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
           <svg
             className={`w-5 h-5 transition-colors duration-300 ${
               isFocused ? 'text-purple-400' : 'text-slate-400'
@@ -53,7 +53,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
 
         {/* Input field */}
         <Input
-          placeholder="Search for movies, actors, directors..."
+          placeholder="Search for movies..."
           value={search}
           onChange={handleChange}
           onFocus={() => setIsFocused(true)}
@@ -85,27 +85,6 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
           </button>
         )}
       </div>
-
-      {/* Search suggestions or recent searches could go here */}
-      {isFocused && search.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/90 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 z-20">
-          <p className="text-sm text-slate-400 mb-3">Popular searches:</p>
-          <div className="flex flex-wrap gap-2">
-            {['Marvel', 'Horror', 'Comedy', 'Action', 'Sci-Fi'].map((term) => (
-              <button
-                key={term}
-                onClick={() => {
-                  setSearch(term);
-                  onSearch(term);
-                }}
-                className="px-3 py-1 bg-slate-700/50 hover:bg-purple-600/20 hover:border-purple-500/50 border border-slate-600/50 rounded-full text-xs text-slate-300 hover:text-purple-300 transition-all duration-200"
-              >
-                {term}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

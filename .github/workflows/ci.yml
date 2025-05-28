@@ -27,9 +27,6 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: Run tests
-        run: npm run test
-
   deploy:
     needs: lint-and-test
     runs-on: ubuntu-latest

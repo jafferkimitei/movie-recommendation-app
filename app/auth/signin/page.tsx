@@ -4,25 +4,36 @@ import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const backgrounds = [
-  "/images/login-bg-1.jpg",
-  "/images/login-bg-2.jpg",
-  "/images/login-bg-3.jpg"
+  "/login1.jpg",
+  "/login2.jpg",
+  "/login3.webp",
+  "/login4.webp",
 ];
 
 export default function SignInPage() {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
-  const [currentBg, setCurrentBg] = useState(backgrounds[0]);
+  const [currentBg, setCurrentBg] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
 
   useEffect(() => {
-    let index = 0;
+    // Generate floating particles
+    const particleArray = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      delay: Math.random() * 2
+    }));
+    setParticles(particleArray);
+  }, []);
+
+  useEffect(() => {
     const cycleBackgrounds = () => {
-      index = (index + 1) % backgrounds.length;
-      setCurrentBg(backgrounds[index]);
+      setCurrentBg(prev => (prev + 1) % backgrounds.length);
     };
     const interval = setInterval(cycleBackgrounds, 8000);
     return () => clearInterval(interval);
@@ -47,52 +58,144 @@ export default function SignInPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black">
-        <div className="animate-pulse text-white text-2xl">Loading...</div>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center"
+        >
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            className="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full mx-auto mb-4"
+          />
+          <div className="text-white text-2xl font-light">Loading...</div>
+        </motion.div>
       </div>
     );
   }
 
   return (
-    <div 
-      className="min-h-screen flex flex-col items-center justify-center bg-black bg-cover bg-center transition-all duration-1000 ease-in-out"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), url(${currentBg})`
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50 z-0" />
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full max-w-md px-8 py-12 bg-black/80 rounded-lg shadow-2xl backdrop-blur-sm border border-gray-800 relative z-10"
-      >
-        <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold text-red-600 mb-2">Jafflix</h1>
-          <p className="text-gray-300">Unlimited movies, TV shows, and more.</p>
-        </div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentBg}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${backgrounds[currentBg]})`
+          }}
+        />
+      </AnimatePresence>
 
-        <motion.div 
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          onHoverStart={() => setIsHovered(true)}
-          onHoverEnd={() => setIsHovered(false)}
-          className="mb-6"
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-purple-900/30 to-slate-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/60" />
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {particles.map((particle) => (
+          <motion.div
+            key={particle.id}
+            className="absolute w-1 h-1 bg-purple-500/30 rounded-full"
+            style={{
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: particle.delay,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-4">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="w-full max-w-md"
         >
-          <Button
-            onClick={() => signIn("google", { callbackUrl: "/" })}
-            className="w-full py-6 bg-white text-black hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-3 text-lg"
+          {/* Logo Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center mb-12"
           >
-            <GoogleIcon isHovered={isHovered} />
-            Sign in with Google
-          </Button>
-        </motion.div>
+            <motion.h1 
+              className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 mb-4"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              Jafflix
+            </motion.h1>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent mb-4"
+            />
+            <p className="text-gray-300 text-lg font-light">
+              Unlimited movies and more.
+            </p>
+          </motion.div>
 
-        <div className="text-center text-gray-400 text-sm">
-          <p>By signing in, you agree to our Terms of Service and Privacy Policy</p>
-        </div>
-      </motion.div>
+          {/* Sign In Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="backdrop-blur-xl bg-black/40 rounded-2xl p-8 border border-gray-800/50 shadow-2xl"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onHoverStart={() => setIsHovered(true)}
+              onHoverEnd={() => setIsHovered(false)}
+              className="mb-6"
+            >
+              <Button
+                onClick={() => signIn("google", { callbackUrl: "/" })}
+                className="w-full py-6 bg-gradient-to-r from-white to-gray-100 text-black hover:from-gray-100 hover:to-white transition-all duration-300 flex items-center justify-center gap-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl border-2 border-transparent hover:border-gray-300"
+              >
+                <GoogleIcon isHovered={isHovered} />
+                Sign in with Google
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="text-center"
+            >
+              <p className="text-gray-400 text-sm leading-relaxed">
+                By signing in, you agree to our{" "}
+                <span className="text-purple-400 hover:text-purple-300 cursor-pointer underline">
+                  Terms of Service
+                </span>{" "}
+                and{" "}
+                <span className="text-purple-400 hover:text-purple-300 cursor-pointer underline">
+                  Privacy Policy
+                </span>
+              </p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }
@@ -110,7 +213,7 @@ function GoogleIcon({ isHovered }: { isHovered: boolean }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <path d="M21.8 10.5H12v3h5.6c-.3 1.5-1.6 3.5-5.6 3.5-3.4 0-6.1-2.7-6.1-6s2.7-6 6.1-6c1.6 0 2.8.6 3.5 1.4l2.5-2.4C17.4 2.2 15 1 12 1 6.4 1 1.8 5.6 1.8 11.2S6.4 21.4 12 21.4c5.3 0 9.8-3.7 9.8-9.4 0-.6-.1-1.1-.2-1.5z" />
     </motion.svg>

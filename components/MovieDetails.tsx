@@ -117,7 +117,7 @@ export default function MovieDetails({
                   {genres.map((genre) => (
                     <Badge 
                       key={genre.id} 
-                      className="px-4 py-2 bg-slate-800/50 hover:bg-purple-600/20 border-slate-700/50 hover:border-purple-500/50 text-slate-300 hover:text-purple-300 transition-all duration-300 rounded-full"
+                      className="cursor-pointer px-4 py-2 bg-slate-800/50 hover:bg-purple-600/20 border-slate-700/50 hover:border-purple-500/50 text-slate-300 hover:text-purple-300 transition-all duration-300 rounded-full"
                     >
                       {genre.name}
                     </Badge>
@@ -151,7 +151,7 @@ export default function MovieDetails({
                 <Button
                   onClick={() => setShowAllCast(!showAllCast)}
                   variant="outline"
-                  className="border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400"
+                  className="cursor-pointer border-purple-500/50 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400"
                 >
                   {showAllCast ? 'Show Less' : `Show All (${cast.length})`}
                 </Button>

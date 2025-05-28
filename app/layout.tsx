@@ -7,7 +7,7 @@ import AuthProvider from "@/components/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Movie Recommendation App",
+  title: "Jafflix - Movie Recommendation App",
   description: "Search and explore movies with personalized recommendations",
 };
 
