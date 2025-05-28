@@ -21,11 +21,11 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 ## 🚀 Screenshots
 
 ### Home Page
-![Home Page Screenshot](./screenshots/screenshot2.png)
+![Home Page Screenshot](/screenshots/screenshot2.png)
 
 ### Movie Details
-![Movie Details Screenshot](./screenshots/screenshot3.png)
-![Movie Details Screenshot](./screenshots/screenshot4.png)
+![Movie Details Screenshot](/screenshots/screenshot3.png)
+![Movie Details Screenshot](/screenshots/screenshot4.png)
 
 ### Authentication (Login/Sign Up)
 ![Login Screenshot](./screenshots/screenshot1.png)
