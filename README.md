@@ -20,15 +20,17 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 
 ## 🚀 Screenshots
 
+## 🚀 Screenshots
+
 ### Home Page
-![Home Page Screenshot](/screenshots/screenshot2.png)
+![Home Page Screenshot](https://raw.githubusercontent.com/jafferkimitei/movie-recommendation-app/main/public/screenshots/screenshot2.png)
 
 ### Movie Details
-![Movie Details Screenshot](/screenshots/screenshot3.png)
-![Movie Details Screenshot](/screenshots/screenshot4.png)
+![Movie Details Screenshot](https://raw.githubusercontent.com/jafferkimitei/movie-recommendation-app/main/public/screenshots/screenshot3.png)
+![Movie Details Screenshot](https://raw.githubusercontent.com/jafferkimitei/movie-recommendation-app/main/public/screenshots/screenshot4.png)
 
 ### Authentication (Login/Sign Up)
-![Login Screenshot](/screenshots/screenshot1.png)
+![Login Screenshot](https://raw.githubusercontent.com/jafferkimitei/movie-recommendation-app/main/public/screenshots/screenshot1.png)
 
 ---
 
