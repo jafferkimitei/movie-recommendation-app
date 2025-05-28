@@ -35,7 +35,7 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 
 ## 🧑‍🎨 Advanced Design
 
-Our application is crafted with modern design principles:
+My application is crafted with modern design principles:
 - **Tailwind CSS** for atomic CSS styling.
 - **Shadcn/UI** for consistent UI components.
 - **Responsive layouts** ensuring a seamless experience across devices.
