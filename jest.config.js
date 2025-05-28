@@ -37,7 +37,6 @@ module.exports = {
       '^.+\\.(ts|tsx)?$': 'ts-jest',
       '^.+\\.(js|jsx)$': 'babel-jest',
     },
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     testTimeout: 10000,
   };
