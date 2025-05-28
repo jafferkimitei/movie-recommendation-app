@@ -12,9 +12,9 @@ A sleek movie recommendation platform powered by **Next.js**, **TypeScript**, **
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/jafferkimitei/movie-recommendation?color=blue&style=for-the-badge" alt="Top Language" />
-  <img src="https://img.shields.io/github/last-commit/jafferkimitei/movie-recommendation?color=green&style=for-the-badge" alt="Last Commit" />
-  <img src="https://img.shields.io/github/license/jafferkimitei/movie-recommendation?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/github/languages/top/jafferkimitei/movie-recommendation-app?color=blue&style=for-the-badge" alt="Top Language" />
+  <img src="https://img.shields.io/github/last-commit/jafferkimitei/movie-recommendation-app?color=green&style=for-the-badge" alt="Last Commit" />
+  <img src="https://img.shields.io/github/license/jafferkimitei/movie-recommendation-app?style=for-the-badge" alt="License" />
   <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4%20by%20Jaffer-blueviolet?style=for-the-badge" alt="Made by Jaffer" />
 </p>
 
@@ -51,6 +51,11 @@ Our application is crafted with modern design principles:
 - **CI/CD**: GitHub Actions, Vercel
 
 ---
+<p align="center">
+  <a href="https://jafflix.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-%F0%9F%9A%80-brightgreen?style=for-the-badge" alt="Live Demo" />
+  </a>
+</p>
 
 ## 🛠️ Setup
 

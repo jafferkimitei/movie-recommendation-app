@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth/next';
 
 // Mock next-auth
 jest.mock('next-auth/next');
-jest.mock('@/app/api/auth/[...nextauth]/route', () => ({
+jest.mock('@/app/auth/options', () => ({
   authOptions: {
     providers: [],
     callbacks: {},
